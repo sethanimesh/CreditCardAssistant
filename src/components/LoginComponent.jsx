@@ -10,6 +10,8 @@ export default function LoginComponent(){
     const[successMessage, setSuccessMessage] = useState(false)
     const[errorMessage, setErrorMessage] = useState(false)
 
+    const authContext = useAuth()
+
     function handleUsernameChange(event){
         setUsername(event.target.value)
     }
@@ -19,7 +21,8 @@ export default function LoginComponent(){
     }
 
     function handleSubmit(){
-        if(username==="sethanimesh" && password==="dummy"){
+        if(authContext.login(username, password)){
+            navigate(`/welcome/${username}`)
             setSuccessMessage(true)
             setErrorMessage(false)
         }
