@@ -17,7 +17,7 @@ export default function LoginComponent(){
     }
 
     function handleSubmit(){
-        if(username=="sethanimesh" && password=="dummy"){
+        if(username==="sethanimesh" && password==="dummy"){
             setSuccessMessage(true)
             setErrorMessage(false)
         }
@@ -35,13 +35,14 @@ export default function LoginComponent(){
         }
     }
 
+
     function ErrorMessageComponent(){
         if (errorMessage){
             return (
                 <div className="errorMessage">Authentication Failed</div>
             )
-        }
     }
+}
 
 
     return (
