@@ -1,4 +1,4 @@
-import {createContext, createState, useContext, useState} from "react";
+import {createContext, useContext, useState} from "react";
 
 export const AuthContext = createContext()
 
@@ -24,8 +24,6 @@ export default function AuthProvider({children}){
     }
 
     const valueToBeShared = {isAuthenticated, setAuthenticated, login, logout}
-
-    
 
     return (
         <AuthContext.Provider value = {valueToBeShared}>

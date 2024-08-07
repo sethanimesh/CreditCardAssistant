@@ -4,7 +4,6 @@ import './styles/header.css';
 import { useAuth } from "./security/AuthContext";
 
 
-
 export default function HeaderComponent(){
 
     const authContext = useAuth()
@@ -17,15 +16,15 @@ export default function HeaderComponent(){
             </div>
             <nav className="nav-menu">
                 {isAuthenticated && <Link to="/">Home</Link>}
-                <Link to="/dashboard">Dashboard</Link>
-                <Link to="/add-card">Add Card</Link>
-                <Link to="/recommendations">Recommendations</Link>
-                <Link to="/notifications">Notifications</Link>
-                <Link to="/profile">Profile</Link>
+                {isAuthenticated &&<Link to="/dashboard">Dashboard</Link>}
+                {isAuthenticated &&<Link to="/add-card">Add Card</Link>}
+                {isAuthenticated &&<Link to="/recommendations">Recommendations</Link>}
+                {isAuthenticated &&<Link to="/notifications">Notifications</Link>}
+                {isAuthenticated &&<Link to="/profile">Profile</Link>}
             </nav>
             <div className="header-right">
                 <div className="logout">
-                    <Link to="/logout">Logout</Link>
+                    {isAuthenticated &&<Link to="/logout">Logout</Link>}
                 </div>
             </div>
         </header>
