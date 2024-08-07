@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import CreditCardApp from './components/CreditCardApp';
 
