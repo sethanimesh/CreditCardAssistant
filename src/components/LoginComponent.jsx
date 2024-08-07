@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react"
 import $ from 'jquery';
 import './styles/login.css'
+import { useAuth } from "./security/AuthContext";
+import { Navigate, useNavigate } from "react-router-dom";
 
 export default function LoginComponent(){
 
@@ -10,6 +12,8 @@ export default function LoginComponent(){
     const[successMessage, setSuccessMessage] = useState(false)
     const[errorMessage, setErrorMessage] = useState(false)
 
+
+    const navigate = useNavigate();
     const authContext = useAuth()
 
     function handleUsernameChange(event){
@@ -19,6 +23,7 @@ export default function LoginComponent(){
     function handlePasswordChange(event){
         setPassword(event.target.value)
     }
+
 
     function handleSubmit(){
         if(authContext.login(username, password)){

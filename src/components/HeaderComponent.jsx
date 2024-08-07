@@ -1,16 +1,22 @@
 import { Link } from "react-router-dom";
 import logo from '../assets/logo.jpg';
 import './styles/header.css';
+import { useAuth } from "./security/AuthContext";
+
 
 
 export default function HeaderComponent(){
+
+    const authContext = useAuth()
+    const isAuthenticated = authContext.isAuthenticated
+
     return (
         <header className="header">
             <div className="header-left">
                 <img src={logo} alt="Logo" className="logo" />
             </div>
             <nav className="nav-menu">
-                <Link to="/">Home</Link>
+                {isAuthenticated && <Link to="/">Home</Link>}
                 <Link to="/dashboard">Dashboard</Link>
                 <Link to="/add-card">Add Card</Link>
                 <Link to="/recommendations">Recommendations</Link>
