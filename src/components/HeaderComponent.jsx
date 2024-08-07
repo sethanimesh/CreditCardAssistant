@@ -15,7 +15,7 @@ export default function HeaderComponent(){
                 <img src={logo} alt="Logo" className="logo" />
             </div>
             <nav className="nav-menu">
-                {isAuthenticated && <Link to="/">Home</Link>}
+                {isAuthenticated && <Link to="/welcome">Home</Link>}
                 {isAuthenticated &&<Link to="/dashboard">Dashboard</Link>}
                 {isAuthenticated &&<Link to="/add-card">Add Card</Link>}
                 {isAuthenticated &&<Link to="/recommendations">Recommendations</Link>}
