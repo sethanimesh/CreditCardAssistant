@@ -20,11 +20,11 @@ export default function HeaderComponent(){
             </div>
             <nav className="nav-menu">
                 {isAuthenticated && <Link to="/welcome">Home</Link>}
-                {isAuthenticated &&<Link to="/dashboard">Dashboard</Link>}
-                {isAuthenticated &&<Link to="/add-card">Add Card</Link>}
-                {isAuthenticated &&<Link to="/recommendations">Recommendations</Link>}
-                {isAuthenticated &&<Link to="/notifications">Notifications</Link>}
-                {isAuthenticated &&<Link to="/profile">Profile</Link>}
+                {isAuthenticated && <Link to="/add-card">Add Card</Link>}
+                {isAuthenticated && <Link to="/dashboard">Dashboard</Link>}
+                {isAuthenticated && <Link to="/recommendations">Recommendations</Link>}
+                {isAuthenticated && <Link to="/notifications">Notifications</Link>}
+                {isAuthenticated && <Link to="/profile">Profile</Link>}
             </nav>
             <div className="header-right">
                 <div className="logout">
