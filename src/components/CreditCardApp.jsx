@@ -3,6 +3,7 @@ import LoginComponent from "./LoginComponent";
 import HeaderComponent from "./HeaderComponent";
 import AuthProvider, {useAuth } from "./security/AuthContext"
 import WelcomeComponent from "./WelcomeComponent";
+import LogoutComponent from "./LogoutComponent";
 
 
 function AuthenticatedRoute({children}){
@@ -30,6 +31,11 @@ export default function CreditCardApp(){
                             <AuthenticatedRoute>
                                 <WelcomeComponent/>
                             </AuthenticatedRoute>}/>
+                        <Route path="/logout" element={
+                            <AuthenticatedRoute>
+                                <LogoutComponent/>
+                            </AuthenticatedRoute>
+                        }/>
                     </Routes>
                 </BrowserRouter>
             </AuthProvider>

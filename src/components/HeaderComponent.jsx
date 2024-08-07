@@ -9,6 +9,10 @@ export default function HeaderComponent(){
     const authContext = useAuth()
     const isAuthenticated = authContext.isAuthenticated
 
+    function logout(){
+        authContext.setAuthenticated(false)
+    }
+
     return (
         <header className="header">
             <div className="header-left">
@@ -24,7 +28,7 @@ export default function HeaderComponent(){
             </nav>
             <div className="header-right">
                 <div className="logout">
-                    {isAuthenticated &&<Link to="/logout">Logout</Link>}
+                    {isAuthenticated &&<Link to="/logout" onClick={logout}>Logout</Link>}
                 </div>
             </div>
         </header>
