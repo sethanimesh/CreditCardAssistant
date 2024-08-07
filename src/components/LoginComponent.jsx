@@ -1,4 +1,5 @@
 import { useState } from "react"
+import './styles/login.css'
 
 export default function LoginComponent(){
 
@@ -50,16 +51,21 @@ export default function LoginComponent(){
             <div className="LoginForm">
                 <SuccessMessageComponent/>
                 <ErrorMessageComponent/>
-                <div>
+                <div className="group">
+                    <input type="text" name="username" onChange={handleUsernameChange} />
+                    <span className="highlight"></span><span className="bar"></span>
                     <label>Username</label>
-                    <input type="text" name="username" onChange={handleUsernameChange}/>
                 </div>
-                <div>
+                <div className="group">
+                    <input type="password" name="password" onChange={handlePasswordChange} />
+                    <span className="highlight"></span><span className="bar"></span>
                     <label>Password</label>
-                    <input type="password" name="password" onChange={handlePasswordChange}/>
                 </div>
                 <div>
-                    <button type="button" name="login" onClick={handleSubmit}>Login</button>
+                    <button type="button" className="button buttonBlue" name="login" onClick={handleSubmit}>
+                        Login
+                        <div className="ripples buttonRipples"><span className="ripplesCircle"></span></div>
+                    </button>
                 </div>
             </div>
         </div>
