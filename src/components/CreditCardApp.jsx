@@ -4,6 +4,7 @@ import HeaderComponent from "./HeaderComponent";
 import AuthProvider, {useAuth } from "./security/AuthContext"
 import WelcomeComponent from "./WelcomeComponent";
 import LogoutComponent from "./LogoutComponent";
+import ListCardsComponent from "./ListCardsComponent";
 
 
 function AuthenticatedRoute({children}){
@@ -34,6 +35,11 @@ export default function CreditCardApp(){
                         <Route path="/logout" element={
                             <AuthenticatedRoute>
                                 <LogoutComponent/>
+                            </AuthenticatedRoute>
+                        }/>
+                        <Route path="/dashboard" element={
+                            <AuthenticatedRoute>
+                                <ListCardsComponent/>
                             </AuthenticatedRoute>
                         }/>
                     </Routes>
